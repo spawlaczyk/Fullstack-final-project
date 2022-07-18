@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
-import { BrandName } from '../BrandName/BrandName';
+import { Products } from '../../features/Products/Products';
+import { ReactComponent as Brand } from './brand.svg';
+import { ReactComponent as About } from './about.svg';
 
 const Component = ({ className }) => (
-  <div className={clsx(className, styles.root)}>
-    <div className={styles.topPanel}>
-      Products List
-    </div>
+  <div className={clsx(className, styles.homepage)}>
+    <Products className={styles.topPanel} />
     <div className={styles.bottomPanel}>
-      <BrandName />
+      <Brand className={styles.logo} />
+      <About className={styles.about} />
     </div>
   </div>
 );

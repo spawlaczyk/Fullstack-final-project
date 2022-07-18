@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './redux/store';
@@ -14,7 +14,10 @@ const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <MainLayout>
-        <Homepage />
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </MainLayout>
     </BrowserRouter>
   </Provider>

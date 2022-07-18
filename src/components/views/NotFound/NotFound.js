@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles from './NotFound.module.scss';
+import { LargeText } from '../../common/LargeText/LargeText/LargeText';
 
 const Component = ({ className, children }) => (
   <div className={clsx(className, styles.root)}>
-    <h2>NotFound</h2>
-    {children}
+    <LargeText className={styles.notFound}>Nothing there...</LargeText>
   </div>
 );
 

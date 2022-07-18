@@ -1,0 +1,35 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiperSlide {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .prevButton {
+    background-color: black;
+  }
+}
+
+.root {
+  .swiperSlide:hover {
+    background: #ff6b81;
+    img {
+      opacity: 0;
+      cursor: url('../../../assets/cursor.png'), auto;
+    }
+  }
+}
+
+:root {
+  --swiper-theme-color: #000;
+}

@@ -1,5 +1,9 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-
-// }
+.root {
+  display: flex;
+  justify-content: center;
+  .notFound {
+    font-size: 150px;
+  }
+}
