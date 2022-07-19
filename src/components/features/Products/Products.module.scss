@@ -1,5 +1,14 @@
 @import '../../../styles/settings.scss';
 
+$creme: #F5DBCB;
+$pink: #e9d3d6;
+$green: #31572c;
+$orange: #fb8500;
+$blue: #7d8597;
+$bronze: #862906;
+$white: #fdeed9;
+$purple: #6200b3;
+
 .root {
   .swiper {
     width: 100%;
@@ -7,7 +16,23 @@
   }
 
   .swiperSlide {
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 15;
+      overflow: hidden;
+      opacity: 0;
+    }
+
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 19;
+      opacity: 1;
       display: block;
       width: 100%;
       height: 100%;
@@ -22,7 +47,10 @@
 
 .root {
   .swiperSlide:hover {
-    background: #ff6b81;
+    .overlay {
+      opacity: 1;
+    }
+
     img {
       opacity: 0;
       cursor: url('../../../assets/cursor.png'), auto;
@@ -33,3 +61,4 @@
 :root {
   --swiper-theme-color: #000;
 }
+

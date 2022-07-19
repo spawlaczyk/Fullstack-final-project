@@ -16,7 +16,10 @@ const Component = ({ className, products }) => (
     <Swiper slidesPerView={4} spaceBetween={30} navigation={true} mousewheel={true} modules={[Navigation, Mousewheel]} className={styles.swiper}>
       {products.map(product =>
         <SwiperSlide key={product.name} className={styles.swiperSlide}>
-          <img src={`${product.image}`}  alt={`${product.name}`} />
+          <div className={styles.overlay} style={{ backgroundColor: `${product.mainColor}` }}></div>
+          <a href={`/products/${product.id}`}>
+            <img src={`${product.image}`}  alt={`${product.name}`} />
+          </a>
         </SwiperSlide>
       )}
     </Swiper>
