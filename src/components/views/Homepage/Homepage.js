@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 //import { connect } from 'react-redux';
 import clsx from 'clsx';
@@ -8,24 +8,34 @@ import { Products } from '../../features/Products/Products';
 import { ReactComponent as Brand } from './brand.svg';
 import { ReactComponent as About } from './about.svg';
 import { AboutUs } from '../AboutUs/AboutUs';
+import CloseButton from '../../common/CloseButton/CloseButton';
 
 const Component = ({ className }) => {
-  const about = useRef(null);
+  const [showContent, setShowContent] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
 
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth',
-    });
+  const showAboutSection = () => {
+    setShowAbout(true);
+    setShowContent(false);
   };
+
+  const hideAboutSection = () => {
+    setShowAbout(false);
+    setShowContent(true);
+  };
+  console.log('showAbout: ' + showAbout, 'showContent: ' + showContent);
 
   return (
     <div className={clsx(className, styles.homepage)}>
-      <Products className={styles.topPanel} />
+      {showAbout &&
+      <div onClick={() => hideAboutSection()} className={styles.btnWrapper}>
+        <CloseButton />
+      </div>}
+      {showContent && <Products className={styles.topPanel} />}
       <div className={styles.bottomPanel}>
-        <Brand className={styles.logo} />
-        <About className={styles.about} onClick={() => scrollToSection(about)} />
-        <AboutUs forwardRef={about} className={styles.aboutSection} />
+        {showContent && <Brand className={styles.logo} />}
+        {showContent && <About className={styles.about} onClick={() => showAboutSection()} />}
+        {showAbout && <AboutUs className={styles.aboutSection} />}
       </div>
     </div>
   );

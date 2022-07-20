@@ -2,6 +2,17 @@
 
 .homepage {
   height: 100vh;
+  opacity: 1;
+  animation: appear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  .btnWrapper {
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    width: 45px;
+    height: 45px;
+  }
+
   .topPanel {
     height: 50%;
     padding: 15px;
@@ -19,7 +30,7 @@
       width: 100%;
       padding: 0;
       opacity: 1;
-      animation: appear 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation: appear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     .about {
@@ -28,7 +39,12 @@
       padding: 0;
       display: none;
       opacity: 0;
-      animation: disappear 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation: disappear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .aboutSection {
+      opacity: 1;
+      animation: appear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   }
 }
@@ -38,13 +54,13 @@
     .logo {
       display: none;
       opacity: 0;
-      animation: disappear 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation: disappear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     .about {
       display: inline;
       opacity: 1;
-      animation: appear 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation: appear .5s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   }
 }

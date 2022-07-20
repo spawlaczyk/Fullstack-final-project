@@ -1,0 +1,23 @@
+@import '../../../styles/settings.scss';
+
+.btnWrapper {
+  position: fixed;
+  top: 20px;
+  right: 60px;
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  color: white;
+  transition: transform .5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+
+  .btn {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+  }
+}
+
+.btnWrapper:hover {
+  transform: rotate(-180deg);
+}

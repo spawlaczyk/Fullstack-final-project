@@ -6,6 +6,13 @@ const initialState = {
       minPrice: '3$',
       image: '/images/products/creme/creme1.jpeg',
       mainColor: '#F5DBCB',
+      description: 'A beautiful design created by John Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/creme/creme1.jpeg',
+        '/images/products/creme/creme2.jpeg',
+        '/images/products/creme/creme3.jpeg',
+        '/images/products/creme/creme4.jpeg',
+      ],
     },
     {
       id: '2',
@@ -13,6 +20,13 @@ const initialState = {
       minPrice: '5$',
       image: '/images/products/pink/pink1.jpeg',
       mainColor: '#e9d3d6',
+      description: 'A beautiful design created by Amanda Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/pink/pink1.jpeg',
+        '/images/products/pink/pink2.jpeg',
+        '/images/products/pink/pink3.jpeg',
+        '/images/products/pink/pink4.jpeg',
+      ],
     },
     {
       id: '3',
@@ -20,6 +34,13 @@ const initialState = {
       minPrice: '7$',
       image: '/images/products/white/white1.jpg',
       mainColor: '#31572c',
+      description: 'A beautiful design created by John Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/white/white1.jpg',
+        '/images/products/white/white2.jpg',
+        '/images/products/white/white3.jpg',
+        '/images/products/white/white4.jpg',
+      ],
     },
     {
       id: '4',
@@ -27,6 +48,13 @@ const initialState = {
       minPrice: '9$',
       image: '/images/products/warhol/warhol1.png',
       mainColor: '#fb8500',
+      description: 'A beautiful design created by Amanda Doe. Inspired by Andy Warhol works. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/warhol/warhol1.png',
+        '/images/products/warhol/warhol2.png',
+        '/images/products/warhol/warhol3.png',
+        '/images/products/warhol/warhol4.png',
+      ],
     },
     {
       id: '5',
@@ -34,6 +62,13 @@ const initialState = {
       minPrice: '11$',
       image: '/images/products/klimt/klimt1.png',
       mainColor: '#7d8597',
+      description: 'A beautiful design created by John Doe. Inspired by Gustav Klimt works. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/klimt/klimt1.png',
+        '/images/products/klimt/klimt2.png',
+        '/images/products/klimt/klimt3.png',
+        '/images/products/klimt/klimt4.png',
+      ],
     },
     {
       id: '6',
@@ -41,6 +76,13 @@ const initialState = {
       minPrice: '13$',
       image: '/images/products/monet/monet1.png',
       mainColor: '#862906',
+      description: 'A beautiful design created by Amanda Doe. Inspired by Claude Monet works. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/monet/monet1.png',
+        '/images/products/monet/monet2.png',
+        '/images/products/monet/monet3.png',
+        '/images/products/monet/monet4.png',
+      ],
     },
     {
       id: '7',
@@ -48,6 +90,13 @@ const initialState = {
       minPrice: '15$',
       image: '/images/products/picasso/picasso1.png',
       mainColor: '#fdeed9',
+      description: 'A beautiful design created by John Doe. Inspired by Pablo Picasso works. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/picasso/picasso1.png',
+        '/images/products/picasso/picasso2.png',
+        '/images/products/picasso/picasso3.png',
+        '/images/products/picasso/picasso4.png',
+      ],
     },
     {
       id: '8',
@@ -55,6 +104,13 @@ const initialState = {
       minPrice: '17$',
       image: '/images/products/violet-smile/smile1.png',
       mainColor: '#6200b3',
+      description: 'A beautiful design created by Amanda Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
+      photos: [
+        '/images/products/violet-smile/smile1.png',
+        '/images/products/violet-smile/smile2.png',
+        '/images/products/violet-smile/smile3.png',
+        '/images/products/violet-smile/smile4.png',
+      ],
     },
   ],
 };

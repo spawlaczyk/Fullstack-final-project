@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
 
+import { ReactComponent as About } from '../Homepage/about.svg';
+
 import styles from './AboutUs.module.scss';
 
-const Component = ({ forwardRef, className }) => (
-  <div ref={forwardRef} className={clsx(className, styles.aboutUs)}>
+const Component = ({ className }) => (
+  <div className={clsx(className, styles.aboutUs)}>
+    <About className={styles.about} />
     <div className={styles.text}>
       <h3>who we are?</h3>
       <p>Hi!<br />
@@ -42,10 +45,6 @@ const Component = ({ forwardRef, className }) => (
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  forwardRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.object }),
-  ]),
 };
 
 // const mapStateToProps = state => ({

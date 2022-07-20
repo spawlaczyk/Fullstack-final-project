@@ -9,6 +9,7 @@ import './styles/global.scss';
 import { MainLayout } from './components/layouts/MainLayout/MainLayout';
 import { NotFound } from './components/views/NotFound/NotFound';
 import { Homepage } from './components/views/Homepage/Homepage';
+import { SingleProduct } from './components/views/SingleProduct/SingleProduct';
 
 const App = () => (
   <Provider store={store}>
@@ -17,6 +18,7 @@ const App = () => (
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/products/:id' element={<SingleProduct />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
