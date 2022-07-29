@@ -7,9 +7,9 @@ import styles from './CloseButton.module.scss';
 
 import { ImCross } from 'react-icons/im';
 
-const CloseButton = () => {
+const CloseButton = ({ className }) => {
   return (
-    <div className={styles.btnWrapper}>
+    <div className={clsx(className, styles.btnWrapper)}>
       <ImCross className={styles.btn} />
     </div>
   );

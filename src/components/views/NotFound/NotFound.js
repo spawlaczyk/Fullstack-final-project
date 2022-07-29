@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles from './NotFound.module.scss';
-import { LargeText } from '../../common/LargeText/LargeText/LargeText';
+import { Link } from 'react-router-dom';
 
 const Component = ({ className, children }) => (
-  <div className={clsx(className, styles.root)}>
-    <LargeText className={styles.notFound}>Nothing there...</LargeText>
+  <div className={clsx(className, styles.notFound)}>
+    <h1>404 not found...</h1>
+    <Link to='/'>back to homepage</Link>
   </div>
 );
 

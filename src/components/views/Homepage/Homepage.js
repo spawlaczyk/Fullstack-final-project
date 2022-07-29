@@ -23,7 +23,6 @@ const Component = ({ className }) => {
     setShowAbout(false);
     setShowContent(true);
   };
-  console.log('showAbout: ' + showAbout, 'showContent: ' + showContent);
 
   return (
     <div className={clsx(className, styles.homepage)}>

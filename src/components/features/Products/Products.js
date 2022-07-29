@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Mousewheel } from 'swiper';
+import { Link } from 'react-router-dom';
 
 import { getAllProducts } from '../../../redux/productsRedux';
 
@@ -17,9 +18,9 @@ const Component = ({ className, products }) => (
       {products.map(product =>
         <SwiperSlide key={product.name} className={styles.swiperSlide}>
           <div className={styles.overlay} style={{ backgroundColor: `${product.mainColor}` }}></div>
-          <a href={`/products/${product.id}`}>
+          <Link to={`/products/${product.id}`}>
             <img src={`${product.image}`}  alt={`${product.name}`} />
-          </a>
+          </Link>
         </SwiperSlide>
       )}
     </Swiper>

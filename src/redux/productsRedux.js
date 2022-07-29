@@ -1,6 +1,6 @@
 // selectors
-export const getAllProducts = ({ products }) => products;
-export const getProducyById = ({ products }, productId) => products.find(product => product.id === productId);
+export const getAllProducts = ({ products }) => products.data;
+export const getProducyById = ({ products }, productId) => products.data.find(product => product.id === productId);
 // actions
 const createActionName = actionName => `app/products/${actionName}`;
 // action creators

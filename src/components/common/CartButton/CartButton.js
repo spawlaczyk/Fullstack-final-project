@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import { connect } from 'react-redux';
 import clsx from 'clsx';
 
-import styles from './Product.module.scss';
+import styles from './CartButton.module.scss';
 
-const Component = ({ className, children }) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Product</h2>
-    {children}
+import { BsCart2 } from 'react-icons/bs';
+
+const Component = ({ className }) => (
+  <div className={clsx(className, styles.cartButton)}>
+    <BsCart2 className={styles.btn} />
   </div>
 );
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
 };
 
@@ -28,7 +27,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Product,
-  //Container as Product,
-  Component as ProductComponent,
+  Component as CartButton,
+  //Container as CartButton,
+  Component as CartButtonComponent,
 };
