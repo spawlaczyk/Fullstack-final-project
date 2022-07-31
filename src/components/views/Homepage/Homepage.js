@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-//import { connect } from 'react-redux';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import styles from './Homepage.module.scss';
-import { Products } from '../../features/Products/Products';
+import Products from '../../features/Products/Products';
 import { ReactComponent as Brand } from './brand.svg';
 import { ReactComponent as About } from './about.svg';
-import { AboutUs } from '../AboutUs/AboutUs';
+import AboutUs from '../AboutUs/AboutUs';
+import CartModal from '../../features/CartModal/CartModal';
 import CloseButton from '../../common/CloseButton/CloseButton';
 
-const Component = ({ className }) => {
+import { getAllProducts } from '../../../redux/productsRedux';
+
+const Homepage = ({ className }) => {
   const [showContent, setShowContent] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
+  const products = useSelector(state => getAllProducts(state));
 
   const showAboutSection = () => {
     setShowAbout(true);
@@ -26,12 +31,24 @@ const Component = ({ className }) => {
 
   return (
     <div className={clsx(className, styles.homepage)}>
-      {showAbout &&
-      <div onClick={() => hideAboutSection()} className={styles.btnWrapper}>
-        <CloseButton />
+      <CartModal />
+      {showContent && <div className={styles.topPanel}>
+        <Products className={styles.products} />
+        <div className={styles.mobileView}>
+          {products.map(product =>
+            <div key={product.name} className={styles.mobileViewProduct}>
+              <Link to={`/products/${product.id}`}>
+                <img src={product.image} alt={product.name} />
+              </Link>
+            </div>
+          )}
+        </div>
       </div>}
-      {showContent && <Products className={styles.topPanel} />}
       <div className={styles.bottomPanel}>
+        {showAbout &&
+          <div onClick={() => hideAboutSection()} className={styles.btnWrapper}>
+            <CloseButton />
+          </div>}
         {showContent && <Brand className={styles.logo} />}
         {showContent && <About className={styles.about} onClick={() => showAboutSection()} />}
         {showAbout && <AboutUs className={styles.aboutSection} />}
@@ -40,22 +57,8 @@ const Component = ({ className }) => {
   );
 };
 
-Component.propTypes = {
+Homepage.propTypes = {
   className: PropTypes.string,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someArg: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-  Component as Homepage,
-  //Container as Homepage,
-  Component as HomepageComponent,
-};
+export default Homepage;

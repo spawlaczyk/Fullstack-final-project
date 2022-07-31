@@ -18,6 +18,10 @@
     }
   }
 
+  .mobileView {
+    display: none;
+  }
+
   .bottomPanel {
     display: flex;
     .leftSide {
@@ -83,5 +87,43 @@
   }
 }
 
+@media (max-width: 767px) {
+  .singleProduct {
+    height: auto !important;
 
+    .swiper {
+      display: none;
+    }
 
+    .mobileView {
+      display: block !important;
+      .mobileViewProduct {
+        margin-bottom: 15px;
+        height: 250px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .bottomPanel {
+      display: block;
+      .leftSide {
+        width: 100%;
+      }
+
+      .rightSide {
+        width: 100%;
+
+        form {
+          .actionInput,
+          .qtyInput {
+            font-size: 30px !important;
+          }
+        }
+      }
+    }
+  }
+}

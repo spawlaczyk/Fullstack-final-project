@@ -4,7 +4,7 @@ const initialState = {
       {
         id: '1',
         name: 'Creme bag',
-        minPrice: '3$',
+        minPrice: 3,
         image: '/images/products/creme/creme1.jpeg',
         mainColor: '#F5DBCB',
         description: 'A beautiful design created by John Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -18,7 +18,7 @@ const initialState = {
       {
         id: '2',
         name: 'Pink bag',
-        minPrice: '5$',
+        minPrice: 5,
         image: '/images/products/pink/pink1.jpeg',
         mainColor: '#e9d3d6',
         description: 'A beautiful design created by Amanda Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -32,7 +32,7 @@ const initialState = {
       {
         id: '3',
         name: 'Eco white',
-        minPrice: '7$',
+        minPrice: 7,
         image: '/images/products/white/white1.jpg',
         mainColor: '#31572c',
         description: 'A beautiful design created by John Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -46,7 +46,7 @@ const initialState = {
       {
         id: '4',
         name: 'Andy Warhol',
-        minPrice: '9$',
+        minPrice: 9,
         image: '/images/products/warhol/warhol1.png',
         mainColor: '#fb8500',
         description: 'A beautiful design created by Amanda Doe. Inspired by Andy Warhol works. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -60,7 +60,7 @@ const initialState = {
       {
         id: '5',
         name: 'Gustav Klimt',
-        minPrice: '11$',
+        minPrice: 11,
         image: '/images/products/klimt/klimt1.png',
         mainColor: '#7d8597',
         description: 'A beautiful design created by John Doe. Inspired by Gustav Klimt works. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -74,7 +74,7 @@ const initialState = {
       {
         id: '6',
         name: 'Claude Monet',
-        minPrice: '13$',
+        minPrice: 13,
         image: '/images/products/monet/monet1.png',
         mainColor: '#862906',
         description: 'A beautiful design created by Amanda Doe. Inspired by Claude Monet works. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -88,7 +88,7 @@ const initialState = {
       {
         id: '7',
         name: 'Pablo Picasso',
-        minPrice: '15$',
+        minPrice: 15,
         image: '/images/products/picasso/picasso1.png',
         mainColor: '#fdeed9',
         description: 'A beautiful design created by John Doe. Inspired by Pablo Picasso works. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -102,7 +102,7 @@ const initialState = {
       {
         id: '8',
         name: 'Violet smile',
-        minPrice: '17$',
+        minPrice: 17,
         image: '/images/products/violet-smile/smile1.png',
         mainColor: '#6200b3',
         description: 'A beautiful design created by Amanda Doe. We are honored to show you our 100% eco tote bags. We allocate 10% of our profits to climate-change fighting organizations.',
@@ -115,8 +115,8 @@ const initialState = {
       },
     ],
   },
-  cart: [
-  ],
+  cart: [],
+  orders: [],
 };
 
 export default initialState;

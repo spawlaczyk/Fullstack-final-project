@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -12,37 +12,27 @@ import { getAllProducts } from '../../../redux/productsRedux';
 
 import styles from './Products.module.scss';
 
-const Component = ({ className, products }) => (
-  <div className={clsx(className, styles.root)}>
-    <Swiper slidesPerView={4} spaceBetween={30} navigation={true} mousewheel={true} modules={[Navigation, Mousewheel]} className={styles.swiper}>
-      {products.map(product =>
-        <SwiperSlide key={product.name} className={styles.swiperSlide}>
-          <div className={styles.overlay} style={{ backgroundColor: `${product.mainColor}` }}></div>
-          <Link to={`/products/${product.id}`}>
-            <img src={`${product.image}`}  alt={`${product.name}`} />
-          </Link>
-        </SwiperSlide>
-      )}
-    </Swiper>
-  </div>
-);
+const Products = ({ className }) => {
+  const products = useSelector(state => getAllProducts(state));
 
-Component.propTypes = {
-  products: PropTypes.array,
+  return (
+    <div className={clsx(className, styles.root)}>
+      <Swiper slidesPerView={4} spaceBetween={30} navigation={true} mousewheel={true} modules={[Navigation, Mousewheel]} className={styles.swiper} breakpoints={{280: {slidesPerView: 1}, 1024: {slidesPerView: 4}}}>
+        {products.map(product =>
+          <SwiperSlide key={product.name} className={styles.swiperSlide}>
+            <div className={styles.overlay} style={{ backgroundColor: `${product.mainColor}` }}></div>
+            <Link to={`/products/${product.id}`}>
+              <img src={`${product.image}`}  alt={`${product.name}`} />
+            </Link>
+          </SwiperSlide>
+        )}
+      </Swiper>
+    </div>
+  );
+};
+
+Products.propTypes = {
   className: PropTypes.string,
 };
 
-const mapStateToProps = state => ({
-  products: getAllProducts(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  //someArg: arg => dispatch(reduxActionCreator(arg)),
-});
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-  Container as Products,
-  Component as ProductsComponent,
-};
+export default Products;

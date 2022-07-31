@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import clsx from 'clsx';
 
 import styles from './CloseButton.module.scss';
@@ -16,7 +15,6 @@ const CloseButton = ({ className }) => {
 };
 
 CloseButton.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
 };
 

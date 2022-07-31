@@ -1,6 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  height: 100%;
   .swiper {
     width: 100%;
     height: 100%;
@@ -34,6 +35,10 @@
   .prevButton {
     background-color: black;
   }
+
+  .mobileView {
+    display: none;
+  }
 }
 
 .root {
@@ -52,4 +57,3 @@
 :root {
   --swiper-theme-color: #000;
 }
-

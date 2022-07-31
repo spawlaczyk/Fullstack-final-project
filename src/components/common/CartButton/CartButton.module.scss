@@ -22,3 +22,12 @@
 .cartButton:hover {
   transform: rotate(-360deg);
 }
+
+@media (max-width: 767px) {
+  .cartButton {
+    top: 70px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -67,3 +67,18 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .aboutUs {
+    .text {
+      max-width: 100%;
+    }
+
+    .contact {
+      position: static;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

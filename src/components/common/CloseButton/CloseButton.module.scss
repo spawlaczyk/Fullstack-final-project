@@ -2,6 +2,7 @@
 
 .btnWrapper {
   position: fixed;
+  z-index: 999;
   top: 15px;
   right: 15px;
   width: 60px;
@@ -20,4 +21,11 @@
 
 .btnWrapper:hover {
   transform: rotate(-180deg);
+}
+
+@media (max-width: 767px) {
+  .btnWrapper {
+    width: 45px;
+    height: 45px;
+  }
 }
