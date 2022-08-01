@@ -21,9 +21,9 @@ exports.getOrderById = async (req, res) => {
 };
 
 exports.addNewOrder = async (req, res) => {
-  const { fullName, email, phone, comment, totalPrice, cart } = req.body;
+  const { fullName, email, phone, country, address, comment, totalPrice, cart } = req.body;
   try {
-    const newOrder = new Order({ fullName, email, phone, comment, totalPrice, cart });
+    const newOrder = new Order({ fullName, email, phone, country, address, comment, totalPrice, cart });
     await newOrder.save();
     res.json(newOrder);
   } catch(err) {

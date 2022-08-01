@@ -37,7 +37,7 @@ const Homepage = ({ className }) => {
         <div className={styles.mobileView}>
           {products.map(product =>
             <div key={product.name} className={styles.mobileViewProduct}>
-              <Link to={`/products/${product.id}`}>
+              <Link to={`/products/${product._id}`}>
                 <img src={product.image} alt={product.name} />
               </Link>
             </div>

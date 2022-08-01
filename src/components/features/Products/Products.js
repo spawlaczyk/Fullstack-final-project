@@ -21,7 +21,7 @@ const Products = ({ className }) => {
         {products.map(product =>
           <SwiperSlide key={product.name} className={styles.swiperSlide}>
             <div className={styles.overlay} style={{ backgroundColor: `${product.mainColor}` }}></div>
-            <Link to={`/products/${product.id}`}>
+            <Link to={`/products/${product._id}`}>
               <img src={`${product.image}`}  alt={`${product.name}`} />
             </Link>
           </SwiperSlide>

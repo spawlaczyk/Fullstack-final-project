@@ -24,10 +24,10 @@ const SinglePage = ({ className }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const product = useSelector(state => getProducyById(state, id));
-  const photos = product.photos;
   const [qty, setQty] = useState(1);
   const minQty = 1;
   const maxQty = 10;
+  console.log(product);
 
   const handleQty = (e) => {
     if (e > maxQty) {
@@ -55,7 +55,7 @@ const SinglePage = ({ className }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart({
-      id: product.id,
+      id: product._id,
       name: product.name,
       image: product.image,
       minPrice: product.minPrice,
@@ -66,7 +66,7 @@ const SinglePage = ({ className }) => {
 
   const handleBuyNow = () => {
     dispatch(addToCart({
-      id: product.id,
+      id: product._id,
       name: product.name,
       image: product.image,
       minPrice: product.minPrice,
@@ -76,6 +76,7 @@ const SinglePage = ({ className }) => {
     navigate('/order');
   };
 
+  if(!product) return 'wait a sec...';
   return (
     <div className={clsx(className, styles.singleProduct)}>
       <CartModal />
@@ -83,14 +84,14 @@ const SinglePage = ({ className }) => {
         <CloseButton />
       </Link>
       <Swiper loop={true} slidesPerView={4} spaceBetween={30} navigation={true} mousewheel={true} modules={[Navigation, Mousewheel]} className={styles.swiper}>
-        {photos.map(photo =>
+        {product.photos.map(photo =>
           <SwiperSlide key={photo} className={styles.swiperSlide}>
             <img src={photo} alt={photo} />
           </SwiperSlide>
         )}
       </Swiper>
       <div className={styles.mobileView}>
-        {photos.map(photo =>
+        {product.photos.map(photo =>
           <div key={photo} className={styles.mobileViewProduct}>
             <img src={photo} alt={photo} />
           </div>

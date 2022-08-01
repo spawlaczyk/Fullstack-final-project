@@ -5,6 +5,8 @@ const ordersSchema = new mongoose.Schema({
   email: { type: String, required: true },
   phone: { type: Number },
   comment: { type: String },
+  country: { type: String, required: true },
+  address: { type: String, required: true },
   totalPrice: { type: Number, required: true },
   cart: { type: Array, required: true },
 });
