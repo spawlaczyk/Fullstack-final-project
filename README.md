@@ -6,4 +6,4 @@ Link to heroku: https://ecobag-store.herokuapp.com/
 # Local
 App runs on localhost:3000/.
 
-yarn start in the main directory.
+yarn start in the main directory and npx nodemon server.js in backend folder.
