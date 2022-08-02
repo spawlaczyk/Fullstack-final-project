@@ -6,37 +6,26 @@ import { useDispatch } from 'react-redux';
 
 import styles from './CartProduct.module.scss';
 
-import { removeFromCart } from '../../../redux/cartRedux';
+import { removeFromCart, updateQty } from '../../../redux/cartRedux';
 
 import { BsTrash } from 'react-icons/bs';
 
 const CartProduct = ({ className, item }) => {
   const dispatch = useDispatch();
   const [qty, setQty] = useState(item.qty);
-  const minQty = 1;
-  const maxQty = 10;
+  const [itemPrice, setItemPrice] = useState(item.price);
+  const _id = item._id;
+  console.log(qty);
 
-  const handleQty = (e) => {
-    if (e > maxQty) {
-      setQty(maxQty);
-    } else if (e < minQty) {
-      setQty(minQty);
+  const handleQty = (newQty) => {
+    if(newQty > 10) {
+      setQty(10);
+    } else if(newQty < 1) {
+      setQty(1);
     } else {
-      setQty(e);
-    }
-  };
-
-  const decrementQty = () => {
-    if (qty > minQty) {
-      setQty(qty - 1);
-    }
-  };
-
-  const incrementQty = () => {
-    if (qty < maxQty) {
-      setQty(qty + 1);
-    } else if (qty > maxQty) {
-      setQty(maxQty);
+      setQty(newQty);
+      setItemPrice(item.minPrice * newQty);
+      dispatch(updateQty({_id, qty: newQty, price: itemPrice}));
     }
   };
 
@@ -51,31 +40,11 @@ const CartProduct = ({ className, item }) => {
       </div>
       <div className={styles.infoWrapper}>
         <p className={styles.name}>{item.name}</p>
-        <p><span>price: </span>{item.price}$</p>
+        <p><span>price: </span>{itemPrice}$</p>
       </div>
       <div className={styles.actionsWrapper}>
         <form>
-          <input
-            type='button'
-            value='-'
-            onClick={() => decrementQty()}
-            className={styles.actionInput}
-          />
-          <input
-            type='number'
-            name='qty'
-            value={qty}
-            onChange={(event) => {
-              handleQty(event.target.value);
-            }}
-            className={styles.qtyInput}
-          />
-          <input
-            type='button'
-            value='+'
-            onClick={() => incrementQty()}
-            className={styles.actionInput}
-          />
+          <input type='number' min='1' max='10' value={qty} onChange={(event) => handleQty(event.target.value)} />
         </form>
         <div onClick={handleRemove}>
           <BsTrash className={styles.trashIcon} />

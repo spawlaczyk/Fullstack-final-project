@@ -1,5 +1,4 @@
-$base-size: 12px;
-
+$main: #ced6e0;
 $creme: #F5DBCB;
 $pink: #e9d3d6;
 $green: #31572c;
@@ -10,46 +9,3 @@ $white: #fdeed9;
 $purple: #6200b3;
 $black: #000;
 $white: #f0f0f0;
-
-@mixin accordion-closed() {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.25s ease-in-out;
-  max-height: 0;
-  transform: translate(0, 50%);
-}
-
-@mixin accordion-open() {
-  transform: translate(0, 0);
-  max-height: 1000px;
-  opacity: 1;
-}
-
-@keyframes flipdown {
-  0% {
-    opacity: 0;
-    transform-origin: top center;
-    transform: rotateX(-90deg);
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  80% {
-    transform: rotateX(8deg);
-  }
-
-  83% {
-    transform: rotateX(6deg);
-  }
-
-  92% {
-    transform: rotateX(-3deg);
-  }
-
-  100% {
-    transform-origin: top center;
-    transform: rotateX(0deg);
-  }
-}

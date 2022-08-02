@@ -25,31 +25,14 @@ const SinglePage = ({ className }) => {
   const { id } = useParams();
   const product = useSelector(state => getProducyById(state, id));
   const [qty, setQty] = useState(1);
-  const minQty = 1;
-  const maxQty = 10;
-  console.log(product);
 
-  const handleQty = (e) => {
-    if (e > maxQty) {
-      setQty(maxQty);
-    } else if (e < minQty) {
-      setQty(minQty);
+  const handleQty = (qty) => {
+    if(qty > 10) {
+      setQty(10);
+    } else if(qty < 1) {
+      setQty(1);
     } else {
-      setQty(e);
-    }
-  };
-
-  const decrementQty = () => {
-    if (qty > minQty) {
-      setQty(qty - 1);
-    }
-  };
-
-  const incrementQty = () => {
-    if (qty < maxQty) {
-      setQty(qty + 1);
-    } else if (qty > maxQty) {
-      setQty(maxQty);
+      setQty(qty);
     }
   };
 
@@ -112,27 +95,8 @@ const SinglePage = ({ className }) => {
         <div className={styles.rightSide}>
           <div className={styles.actionsWrapper}>
             <form>
-              <input
-                type='button'
-                value='-'
-                onClick={() => decrementQty()}
-                className={styles.actionInput}
-              />
-              <input
-                type='number'
-                name='qty'
-                value={qty}
-                onChange={(event) => {
-                  handleQty(event.target.value);
-                }}
-                className={styles.qtyInput}
-              />
-              <input
-                type='button'
-                value='+'
-                onClick={() => incrementQty()}
-                className={styles.actionInput}
-              />
+              <label>quantity: </label>
+              <input type='number' min='1' max='10' value={qty} onChange={(event) => handleQty(event.target.value)} />
             </form>
             <div onClick={handleAddToCart}>
               <Button actionText='add to cart' className={styles.btn} />

@@ -46,6 +46,15 @@ const Order = ({ className }) => {
       <Link to='/'>
         <CloseButton />
       </Link>
+      <div className={styles.summary}>
+        <p>
+          Thank you for shopping in our store!<br/>
+          Every bag with graphic design in our store is available in white and black variant.<br/>
+          If you want one of products in your cart to be in a different color variant let us know in comment section.<br/>
+          Note that international shipping may take additional 1/2 weeks.
+        </p>
+        <p><span>total price: </span>{totalPrice}$</p>
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           <input onChange={e => setFullName(e.target.value)} type='text' placeholder='Enter your name and surname...' minLength='3' maxLength='30' required />
@@ -65,7 +74,6 @@ const Order = ({ className }) => {
         <label>
           <textarea onChange={e => setComment(e.target.value)} placeholder='Place for additional comment to your order...' rows='7' cols='50' minLength='10' maxLength='100' />
         </label>
-        <p><span>total price: </span>{totalPrice}$</p>
         <button type='submit' className={styles.button}>order</button>
       </form>
     </div>

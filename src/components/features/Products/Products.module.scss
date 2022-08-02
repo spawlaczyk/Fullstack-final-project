@@ -33,7 +33,7 @@
   }
 
   .prevButton {
-    background-color: black;
+    background-color: $black;
   }
 
   .mobileView {
@@ -55,5 +55,5 @@
 }
 
 :root {
-  --swiper-theme-color: #000;
+  --swiper-theme-color: $black;
 }

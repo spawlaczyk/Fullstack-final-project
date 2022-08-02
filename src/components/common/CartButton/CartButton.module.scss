@@ -7,7 +7,7 @@
   right: 80px;
   width: 60px;
   height: 60px;
-  background-color: black;
+  background-color: $black;
   transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
   cursor: pointer;
 
@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     padding: 5px;
-    color: white;
+    color: $white;
   }
 }
 
